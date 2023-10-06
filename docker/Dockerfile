@@ -3,9 +3,10 @@
 # and k8s container from OU
 # https://gitlab.nrp-nautilus.io/oulib/kubernetes-tools-in-jupyter/-/blob/main/kubernetes-notebook/Dockerfile
 ########
-FROM gitlab-registry.nrp-nautilus.io/prp/jupyter-stack/datascience:latest
+FROM jupyter/datascience-notebook:python-3.8
 
 USER root
+
 
 # Install all OS dependencies for fully functional notebook server
 RUN apt update -y && \
