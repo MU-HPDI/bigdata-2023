@@ -58,6 +58,8 @@ RUN update-alternatives --install /usr/bin/nano nano /bin/nano-tiny 10
 # Install our deps
 COPY /requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt && rm /tmp/requirements.txt
+RUN pip3 install --extra-index-url https://gitlab.nrp-nautilus.io/api/v4/projects/2953/packages/pypi/simple nautiluslauncher
+
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER ${NB_UID}
